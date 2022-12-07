@@ -1,16 +1,28 @@
 .game{
     margin-top: 60px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap:120px;
     
 }
-
+p{
+    font-size: 18px;
+}
+.button:hover{
+    border-style:dashed;
+   
+}
+.button:hover>p{
+    font-size:35px ;
+    padding-top:0px;
+}
 .button{   
     
     text-align: center;
     border-style: solid;
     width: 150px;
     height: 100px;
+
 }
 
 
@@ -22,4 +34,20 @@ h1{
 
 .button>p{
     pointer-events: none; 
+    
+    padding-top:20px;
+    
+}
+.round-info{
+    margin: 40px 0 40px 0 ;
+    display: flex;
+    justify-content: center;
+    gap :120px;
+
+}
+.choises{
+    margin: 20px 0 40px 0 ;
+    display: flex;
+    justify-content: center;
+    gap :120px;
 }
