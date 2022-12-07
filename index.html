@@ -8,11 +8,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header><h1>My First Project: Rock, Paper, Sciccsors</h1></header>
+    <header><h1>My First Project: Rock, Paper, Scissors</h1></header>
     <div class="game">
       <div class="button rock"><p>Камень</p></div>
       <div class="button paper"><p>Бумага</p></div>
       <div class="button scissors"><p>Ножницы</p></div>
+    </div>
+    <div class="info">
+      <div class="round-info">
+        <p id="round">Round</p>
+        <p id="round result">Round result</p>
+      </div>
+      <div class="choises">
+        <div class="player">
+          <p id="player-choise">Your choise</p>
+          <p id="player-score">Your score</p>
+        </div>
+        <div class="computer">
+          <p id="enemy-choise">Computer choise</p>
+          <p id="enemy-score">Computer score</p>
+        </div>
+      </div>
+    </div>
+    <div class="result">
+      <p id="who win"></p>
     </div>
     <script src="script.js"></script>
   </body>
