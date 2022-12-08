@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header><h1>My First Project: Rock, Paper, Scissors</h1></header>
-    <div class="game">
-      <div class="button rock"><p>Камень</p></div>
-      <div class="button paper"><p>Бумага</p></div>
-      <div class="button scissors"><p>Ножницы</p></div>
+    <div class="game-container">
+      <div class="game">
+        <div class="button rock"><img src="/img/rock.png" alt="rock" /></div>
+        <div class="button paper"><img src="/img/paper.png" alt="paper" /></div>
+        <div class="button scissors">
+          <img src="/img/scissors.png" alt="scissors" />
+        </div>
+      </div>
     </div>
     <div class="info">
       <div class="round-info">
@@ -30,8 +41,50 @@
         </div>
       </div>
     </div>
-    <div class="result">
-      <p id="who win"></p>
+
+    <div class="popup" id="my-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>Game Over</h2>
+        </div>
+        <div class="popup-body">
+          <p id="grats">Congratulations! You're a winner!</p>
+          <p id="lose">Sorry you lose, just play again and destroy random!</p>
+        </div>
+        <div class="popup-footer">
+          <div class="button-container">
+            <button type="button" class="btn btn-success" id="play-again">
+              Play again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup2" id="my-popup2">
+      <div class="popup-content2">
+        <div class="popup-header2">
+          <h2>Volot Artem Present</h2>
+        </div>
+        <div class="popup-body2">
+          <h1 class="poph1">My First Project: Rock, Paper, Scissors</h1>
+          <p class="textpop2">How many score will you play?</p>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              placeholder="Enter number"
+            />
+          </div>
+
+          <div class="start-game">
+            <button type="button" class="btn btn-success" id="play-again">
+              Start game
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
