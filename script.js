@@ -1,12 +1,18 @@
 const choise = ["ROCK", "PAPER", "SCISSORS"];
 var playerWin = 0;
 var computerWin = 0;
-var roundTime = 0;
+var roundTime = 1;
 const innerComputerChoise = document.getElementById("enemy-choise");
 const innerPlayerChoise = document.getElementById("player-choise");
 let playerChoise = document.querySelectorAll(".button");
 const numberRound = document.getElementById("round");
 const roundResult = document.getElementById("round result");
+let popup = document.getElementById("my-popup"),
+popupClose = document.getElementById("close"),
+popupPlayAgain = document.getElementById("play-again")
+let grats = document.getElementById("grats")
+let lose = document.getElementById("lose")
+
 window.onload = init;
 
 function init() {
@@ -24,59 +30,21 @@ function getButton(eventObj) {
   
   outPlayerChoise(playerSelection);
   playOneRound(playerSelection, getComputerChoice(choise));
-  whoWin(5);
+  whoWin(3);
 }
-// let playerSelection = rock.addEventListener("click", function () {
-//     playerSelection =rock.classList[1].toUpperCase();
 
-//     playOneRound(playerSelection, getComputerChoice(choise));
-//     console.log(playerSelection)
-// });
-
-// let playerSelection1 = paper.addEventListener("click", function () {
-//     playerSelection =paper.classList[1].toUpperCase();
-
-//     playOneRound(playerSelection, getComputerChoice(choise));
-//     console.log(playerSelection)
-//   });
-
-// let playerSelection2 = scissors.addEventListener("click", function () {
-//     playerSelection =scissors.classList[1].toUpperCase();
-
-//     playOneRound(playerSelection, getComputerChoice(choise));
-//     console.log(playerSelection)
-//   });
-
-// function getChoisePlayer(playerSelection) {
-
-//   playerSelection = playerSelection.toUpperCase();
-//   return playerSelection;
-// }
-// function score(whoWin){
-//   let maxScore = 5;
-//   for (i=0; i<=maxScore; i ++){
-//     whoWin();
-//     console.log(playerWin)
-//     console.log(ComputerWin)
-//   }
-// }
-
-// function round(){
-//   let maxRound;
-//   for(let oneRound=0; i<=maxRound; oneRound++){
-//     if (i == maxRound)
-//     return numberRound.innerText = `Round: ${oneRound}`
-//   }
-// }
 function outScore(playerWin,computerWin){
 let yourScore= document.getElementById("player-score")
 let enemyScore= document.getElementById("enemy-score")
 yourScore.innerText = `Your score ${playerWin}`
 enemyScore.innerText = `Computer score ${computerWin}`
 }
+
 function startNewGame() {
   playerWin = 0;
   computerWin = 0;
+  roundTime = 1;
+  
 }
 function outPlayerChoise(playerSelection) {
   let playerChoise = playerSelection;
@@ -165,23 +133,24 @@ function playOneRound(getChoisePlayer, getComputerChoice) {
 
 function whoWin(scoreLimit) {
   if (playerWin === scoreLimit) {
-    return alert("You win gratz");
+    popupViewEnd();
+    grats.style.display = "block"
+    
   } else if (computerWin === scoreLimit) {
-    return alert("You lose sorry");
+    popupViewEnd();
+    lose.style.display = "block"
+    
   }
 }
+/* pop up info after game over */
+function popupViewEnd(){
+  popup.style.display = "block"
 
-// function timesToPlay (tries){
+}
 
-//     // let tries = prompt ("How many times to play?",)
-// for(let i = 0;i < tries; i++){
-//     let leftTries = tries - i - 1
-//     // playOneRound(getChoisePlayer(),getComputerChoice(choise));
 
-//     console.log(`You have ${leftTries} tries`)
-// }
-// whoWin();
-// alert("Game over!")
-// }
-
-// timesToPlay(playOneRound);
+popupPlayAgain.onclick = function(){
+    popup.style.display ="none";
+    location.reload();
+  }
+ 
